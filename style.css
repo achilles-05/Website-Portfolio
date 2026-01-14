@@ -1,85 +1,101 @@
+:root {
+  --bg: #050608;
+  --fg: #eaeaea;
+  --accent: #7df9ff;
+  --glass: rgba(255,255,255,0.08);
+}
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: #f4f4f4;
-    color: #333;
+  font-family: 'Inter', sans-serif;
+  background: radial-gradient(circle at top, #0b1220, #050608);
+  color: var(--fg);
+  overflow-x: hidden;
 }
 
-/* NAVBAR */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 60px;
-    background: #111;
-    color: white;
+section {
+  min-height: 100vh;
+  padding: 10vw;
 }
 
-nav ul {
-    list-style: none;
-    display: flex;
-}
-
-nav ul li {
-    margin-left: 20px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}
-
-/* HERO */
 .hero {
-    height: 90vh;
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-    color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.hero button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    border: none;
-    background: #00adb5;
-    color: white;
-    cursor: pointer;
+.hero h1 {
+  font-size: clamp(3rem, 6vw, 7rem);
+  font-weight: 800;
+  line-height: 1.05;
 }
 
-/* SECTIONS */
-.section {
-    padding: 60px;
-    background: white;
-    margin: 20px;
-    border-radius: 10px;
+.hero em {
+  font-weight: 200;
+  color: var(--accent);
 }
 
-/* SKILLS */
-.skills span {
-    display: inline-block;
-    background: #00adb5;
-    color: white;
-    padding: 8px 12px;
-    margin: 5px;
-    border-radius: 5px;
+.hero p {
+  margin-top: 2rem;
+  font-size: 1.2rem;
+  opacity: 0.7;
 }
 
-/* PROJECTS */
-.project {
-    margin-top: 15px;
+.section h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
 }
 
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 20px;
+.section p {
+  max-width: 720px;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  opacity: 0.85;
+}
+
+.dark {
+  background: #02030a;
+}
+
+.center {
+  text-align: center;
+}
+
+/* GLASS */
+.glass {
+  background: var(--glass);
+  backdrop-filter: blur(25px);
+  border-radius: 20px;
+}
+
+/* PROJECT CARDS */
+.card {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  border-left: 3px solid var(--accent);
+}
+
+.card h3 {
+  font-size: 2rem;
+}
+
+.card p {
+  opacity: 0.7;
+}
+
+/* CURSOR */
+.cursor {
+  position: fixed;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 9999;
 }
