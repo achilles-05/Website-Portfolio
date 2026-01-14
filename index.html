@@ -1,82 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Jude | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Jude — Engineering the Invisible</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- GSAP -->
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+
+  <!-- Lenis Smooth Scroll -->
+  <script src="https://unpkg.com/@studio-freight/lenis"></script>
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-    <!-- NAVBAR -->
-    <nav>
-        <h1>Jude</h1>
-        <ul>
-            <li><a href="#about">About</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+  <!-- CURSOR -->
+  <div class="cursor"></div>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-        <h2>Hello, I'm Jude</h2>
-        <p>Mechanical Engineering Student | Aerospace & Robotics Enthusiast</p>
-        <button onclick="scrollToContact()">Contact Me</button>
-    </section>
+  <!-- HERO -->
+  <section class="hero">
+    <h1>
+      <span>Jude</span><br>
+      Mechanical Engineer<br>
+      <em>Engineering systems that think</em>
+    </h1>
+    <p>Aerospace · Robotics · CFD · Research</p>
+  </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-        <h2>About Me</h2>
-        <p>
-            I am a mechanical engineering student passionate about aerospace, robotics,
-            CFD, and advanced engineering systems. I enjoy building projects that combine
-            theory with real-world applications.
-        </p>
-    </section>
+  <!-- MANIFESTO -->
+  <section class="section glass">
+    <h2>Manifesto</h2>
+    <p>
+      I design engineering systems where physics, computation,
+      and intent converge. I work at the edge of uncertainty,
+      building machines that behave with intelligence.
+    </p>
+  </section>
 
-    <!-- SKILLS -->
-    <section id="skills" class="section">
-        <h2>Skills</h2>
-        <div class="skills">
-            <span>Python</span>
-            <span>MATLAB</span>
-            <span>CFD</span>
-            <span>ANSYS</span>
-            <span>SolidWorks</span>
-            <span>ROS</span>
-            <span>HTML</span>
-            <span>CSS</span>
-        </div>
-    </section>
+  <!-- WORK -->
+  <section class="section dark">
+    <h2>Selected Work</h2>
 
-    <!-- PROJECTS -->
-    <section id="projects" class="section">
-        <h2>Projects</h2>
+    <div class="card">
+      <h3>Autonomous CFD-Guided Drone</h3>
+      <p>Real-time aerodynamic intelligence embedded into navigation.</p>
+    </div>
 
-        <div class="project">
-            <h3>Autonomous Drone Path Planning</h3>
-            <p>CFD-guided navigation using MATLAB and Simulink.</p>
-        </div>
+    <div class="card">
+      <h3>Wind Turbine Aeroelastic Stability</h3>
+      <p>VIV suppression through modal & pitch-control analysis.</p>
+    </div>
 
-        <div class="project">
-            <h3>Wind Turbine Aeroelastic Analysis</h3>
-            <p>Modal analysis and VIV modeling using OpenFAST.</p>
-        </div>
+    <div class="card">
+      <h3>Bio-Inspired Thermal Systems</h3>
+      <p>Hypothalamus-like regulation for batteries & data centers.</p>
+    </div>
+  </section>
 
-    </section>
+  <!-- PHILOSOPHY -->
+  <section class="section">
+    <h2>Belief</h2>
+    <p>
+      Engineering is not about perfection — it is about
+      resilience, elegance, and behavior under stress.
+    </p>
+  </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p>Email: jude@example.com</p>
-        <p>LinkedIn: linkedin.com/in/jude</p>
-    </section>
+  <!-- CONTACT -->
+  <section class="section dark center">
+    <h2>Let’s Build the Impossible</h2>
+    <p>jude.engineering@gmail.com</p>
+  </section>
 
-    <footer>
-        <p>© 2026 Jude</p>
-    </footer>
-
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
