@@ -112,9 +112,9 @@ function initEarth() {
   // 3. NETWORK CONNECTIONS (Static Lines)
   // We use LineSegments for batch rendering thousands of lines efficiently
   const lineMaterial = new THREE.LineBasicMaterial({
-    color: 0x245580,
+    color: 0x3a7bbd,
     transparent: true,
-    opacity: 0.15,
+    opacity: 0.08,
     blending: THREE.AdditiveBlending
   });
 
@@ -196,7 +196,7 @@ function initEarth() {
           nodePositions[i1],
           nodePositions[i2],
           0x66ccff,
-          0.1 + dist * 0.2
+          0.04 + dist * 0.08
         );
         earthGroup.add(arc);
         arcLines.push(arc);
@@ -267,11 +267,11 @@ function initEarth() {
     // 2. Pulse active arcs
     arcLines.forEach(line => {
       const pulse = Math.sin(time * 5 + line.userData.phase);
-      line.material.opacity = Math.max(0, pulse);
+      line.material.opacity = Math.max(0, pulse) * 0.5;
     });
 
     // 3. Pulse network lines
-    lineMaterial.opacity = 0.15 + Math.sin(time * 2) * 0.05;
+    lineMaterial.opacity = 0.08 + Math.sin(time * 2) * 0.03;
 
     // 4. Star Ripple Effect
     const positions = stars.geometry.attributes.position.array;
@@ -511,10 +511,9 @@ hamburger.addEventListener('click', () => {
 // ============================================
 const typingText = document.querySelector('.typing-text');
 const typingWords = [
-  'Aerospace Engineer',
-  'CFD Specialist',
-  'Robotics Enthusiast',
-  'Research Scholar'
+  'Aerospace Enthusiast',
+  'Research Focused',
+  'Experienced Intern'
 ];
 let wordIndex = 0;
 let charIndex = 0;
@@ -631,7 +630,9 @@ gsap.utils.toArray('.achievement-card').forEach((card, i) => {
 const statNumbers = document.querySelectorAll('.stat-number');
 
 function animateCounter(element) {
-  const target = parseInt(element.getAttribute('data-target'));
+  const targetStr = element.getAttribute('data-target');
+  const isFloat = targetStr.includes('.');
+  const target = isFloat ? parseFloat(targetStr) : parseInt(targetStr);
   const duration = 2000;
   const increment = target / (duration / 16);
   let current = 0;
@@ -639,7 +640,7 @@ function animateCounter(element) {
   const updateCounter = () => {
     current += increment;
     if (current < target) {
-      element.textContent = Math.floor(current);
+      element.textContent = isFloat ? current.toFixed(1) : Math.floor(current);
       requestAnimationFrame(updateCounter);
     } else {
       element.textContent = target;
